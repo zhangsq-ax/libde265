@@ -25,13 +25,15 @@ jobs:
           echo "--> Move to /usr/local/bin directory"
           sudo mv ~/build-wrapper-linux-x86/* /usr/local/bin/
           echo "--> Start"
-          mkdir build
-          cd build
-          cmake ..
-          build-wrapper-linux-x86-64 --out-dir ../build_wrapper_output make
-          echo "/home/runner/work/libde265 ================================================================="
-          ls -lh /home/runner/work/libde265/libde265
-          ls -lh /home/runner/work/libde265/libde265/build
+          cmake .
+          build-wrapper-linux-x86-64 --out-dir ./build_wrapper_output make
+          #mkdir build
+          #cd build
+          #cmake ..
+          #build-wrapper-linux-x86-64 --out-dir ../build_wrapper_output make
+          #echo "/home/runner/work/libde265 ================================================================="
+          #ls -lh /home/runner/work/libde265/libde265
+          #ls -lh /home/runner/work/libde265/libde265/build
       
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
