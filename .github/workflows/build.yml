@@ -28,14 +28,9 @@ jobs:
           mkdir build
           cd build
           cmake ..
-          build-wrapper-linux-x86-64 --out-dir /home/runner/work/libde265/libde265/build_wrapper_output make
+          build-wrapper-linux-x86-64 --out-dir ./build_wrapper_output make
           echo "/home/runner/work/libde265 ================================================================="
-          ls -lh /home/runner/work/libde265
-          echo "/home/runner/work/libde265/libde265 ========================================================"
-          ls -lh /home/runner/work/libde265/libde265
-          echo "/home/runner/work/libde265/libde265/build_wrapper_output ==================================="
-          ls -lh /home/runner/work/libde265/libde265/build_wrapper_output
-          cat /home/runner/work/libde265/libde265/build_wrapper_output/build-wrapper-dump.json
+          tree /home/runner/work/libde265
       
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
