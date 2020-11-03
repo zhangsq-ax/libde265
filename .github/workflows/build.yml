@@ -37,6 +37,13 @@ jobs:
           ls -lh /home/runner/work/libde265/libde265/build_wrapper_output
       
       - name: SonarCloud Scan
+        run: |
+          echo "/home/runner/work/libde265 ================================================================="
+          ls -lh /home/runner/work/libde265
+          echo "/home/runner/work/libde265/libde265 ========================================================"
+          ls -lh /home/runner/work/libde265/libde265
+          echo "/home/runner/work/libde265/libde265/build_wrapper_output ==================================="
+          ls -lh /home/runner/work/libde265/libde265/build_wrapper_output
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
